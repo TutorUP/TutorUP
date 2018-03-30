@@ -31,7 +31,7 @@ including header content which is common for all pages
                 <div style="float:left">
                     <a class="btn btn-success btn-lg"href='/tutors/edit/<%= tutor.id %>'>Edit</a> &nbsp;
                     <form method="post" action="/tutors/delete/<%= tutor.id %>" style="float:right">
-                        <button class="btn waves-effect waves-light red" type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" />
+                        <button class="btn waves-effect waves-light red" type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')">Delete<button/>
                         <input type="hidden" name="_method" value="DELETE" />
                     </form>
                 </div>
