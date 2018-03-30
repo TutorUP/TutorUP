@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!--
+including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %>
+
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %>
+
+<!--
+including footer content which is common for all pages
+-->
+<%- include ../layouts/footer.ejs %>
