@@ -88,6 +88,9 @@ const tutors = require('./routes/tutors');
 
 app.use('/', index);
 app.use('/tutors', tutors);
+app.get('/about', (req, res) => {
+    res.render('about');
+});
 
 
 app.listen(port, () => {
