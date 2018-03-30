@@ -13,6 +13,27 @@ including header content which is common for all pages
 	<p style="color:green"><%- messages.success %></p>
 <% } %>
 
+<form action="/tutors/add" method="post" name="form1">
+	<table width="50%" border="0">
+		<tr>
+			<td>Name</td>
+			<td><input type="text" name="name" id="name" value="<%= name %>" /></td>
+		</tr>
+		<tr>
+			<td>Subject</td>
+			<td><input type="text" name="subject" value="<%= subject %>" /></td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><input type="text" name="email" value="<%= email %>" /></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input class="btn btn-primary btn-sm" type="submit" name="Submit" value="Add" /></td>
+		</tr>
+	</table>
+</form>
+
 <!--
 including footer content which is common for all pages
 -->
