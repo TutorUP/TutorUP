@@ -36,8 +36,8 @@ app.set('view engine', 'ejs');
 /************************************
             MIDDLEWARE
 *************************************/
-app.use(express.static(__dirname + 'public')); //Serves resources from public folder
-app.use(express.static(dir));
+// app.use(express.static(__dirname + 'public')); //Serves resources from public folder
+// app.use(express.static(dir));
 /**
 * Express Validator Middleware for Form Validation
 */
