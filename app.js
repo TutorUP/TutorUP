@@ -13,15 +13,6 @@ const port = process.env.PORT || 3000;
 //Static folder to access public resources (img, style)
 app.use(express.static(path.join(__dirname, 'public')));
 
-/************************************
-            APP ROUTES
-*************************************/
-const index = require('./routes/index');
-const tutors = require('./routes/tutors');
-
-app.use('/', index);
-app.use('/tutors', tutors);
-
 
 /**
  * Store database credentials in a separate config.js file
@@ -91,6 +82,15 @@ app.use(session({
 	cookie: { maxAge: 60000 }
 }));
 app.use(flash());
+
+/************************************
+            APP ROUTES
+*************************************/
+const index = require('./routes/index');
+const tutors = require('./routes/tutors');
+
+app.use('/', index);
+app.use('/tutors', tutors);
 
 
 app.listen(port, () => {
