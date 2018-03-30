@@ -14,12 +14,12 @@ const port = process.env.PORT || 3000;
  * Load the file/module and its values
  */
 // const config = require('./config_default');
-const dbOptions = {
-        host: config.database.host,
-        user: config.database.user,
-        password: config.database.password,
-        database: config.database.db
-}
+// const dbOptions = {
+//         host: config.database.host,
+//         user: config.database.user,
+//         password: config.database.password,
+//         database: config.database.db
+// }
 
 connection = mysql.createConnection(process.env.JAWSDB_URL);
 

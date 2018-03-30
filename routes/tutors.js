@@ -9,13 +9,13 @@ const connection = mysql.createConnection(process.env.JAWSDB_URL);
  * Load the file/module and its values
  */
 // const config = require('../config_default');
-var dbOptions = {
-	host:	  config.database.host,
-	user: 	  config.database.user,
-	password: config.database.password,
-	port: 	  config.database.port,
-	database: config.database.db
-}
+// var dbOptions = {
+// 	host:	  config.database.host,
+// 	user: 	  config.database.user,
+// 	password: config.database.password,
+// 	port: 	  config.database.port,
+// 	database: config.database.db
+// }
 
 connection.connect();
 
