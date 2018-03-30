@@ -67,28 +67,25 @@ app.post('/add', (req, res, next) => {
             email: req.sanitize('email').escape().trim()
         }
 
-        req.getConnection((error, conn) => {
-            if (error) throw error;
-            conn.query('INSERT INTO tutors SET ?', tutor, (err, result) => {
-                if(err) {
-                    req.flash('error', err)
+        connection.query('INSERT INTO tutors SET ?', tutor, (err, result) => {
+            if(err) {
+                req.flash('error', err)
 
-                    res.render('tutor/add', {
-                        title: 'Add New Tutor',
-                        name: tutor.name,
-                        subject: tutor.subject,
-                        email: tutor.email
-                    })
-                } else {
-                    req.flash('success', 'Data added successfully')
-                    res.render('tutor/add', {
-                        title: 'Add New Tutor',
-                        name: '',
-                        subject: '',
-                        email: ''
-                    })
-                }
-            })
+                res.render('tutor/add', {
+                    title: 'Add New Tutor',
+                    name: tutor.name,
+                    subject: tutor.subject,
+                    email: tutor.email
+                })
+            } else {
+                req.flash('success', 'Data added successfully')
+                res.render('tutor/add', {
+                    title: 'Add New Tutor',
+                    name: '',
+                    subject: '',
+                    email: ''
+                })
+            }
         })
     }
     else {
