@@ -145,30 +145,27 @@ app.put('/edit/(:id)', (req, res, next) => {
             email: req.sanitize('email').escape().trim()
         }
 
-        req.getConnection((error, conn) => {
-            if (error) throw error;
-            conn.query('UPDATE tutors SET ? WHERE id = ' + req.params.id, tutor, (err, result) => {
-                if (err) {
-                    req.flash('error', err)
-                    res.render('tutor/edit', {
-                        title: 'Edit Tutor',
-                        id: req.params.id,
-                        name: req.body.name,
-                        subject: req.body.subject,
-                        email: req.body.email
-                    })
-                }
-                else {
-                    req.flash('success', 'Data updated successfully')
-                    res.render('tutor/edit', {
-                        title: 'Edit Tutor',
-                        id: req.params.id,
-                        name: req.body.name,
-                        subject: req.body.subject,
-                        email: req.body.email
-                    })
-                }
-            })
+        connection.query('UPDATE tutors SET ? WHERE id = ' + req.params.id, tutor, (err, result) => {
+            if (err) {
+                req.flash('error', err)
+                res.render('tutor/edit', {
+                    title: 'Edit Tutor',
+                    id: req.params.id,
+                    name: req.body.name,
+                    subject: req.body.subject,
+                    email: req.body.email
+                })
+            }
+            else {
+                req.flash('success', 'Data updated successfully')
+                res.render('tutor/edit', {
+                    title: 'Edit Tutor',
+                    id: req.params.id,
+                    name: req.body.name,
+                    subject: req.body.subject,
+                    email: req.body.email
+                })
+            }
         })
     }
     else {

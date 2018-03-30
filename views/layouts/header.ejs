@@ -3,18 +3,17 @@
         <title><%= title %></title>
     </head>
     <body>
-        <nav class="navbar navbar-default bg-dark" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">
-                        <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>
-                        TutorUP
-                    </a>
-                    <a href="/tutors/add">Add New Tutor</a>
-                    <a href="/tutors">View All Tutors</a>
-                </div>
-            </div>
-        </nav>
+        <div class="navbar-fixed">
+            <nav>
+              <div class="nav-wrapper">
+                <a href="/" class="brand-logo">TutorUP</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li><a href="/tutors/add">Add New Tutor</a></li>
+                  <li><a href="/tutors">View All Tutors</a></li>
+                </ul>
+              </div>
+            </nav>
+        </div>
         <main>
 
                 <div class="col-sm-8">
