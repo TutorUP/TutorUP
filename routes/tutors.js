@@ -8,7 +8,7 @@ const connection = mysql.createConnection(process.env.JAWSDB_URL);
  * Store database credentials in a separate config.js file
  * Load the file/module and its values
  */
-const config = require('../config')
+// const config = require('../config_default');
 var dbOptions = {
 	host:	  config.database.host,
 	user: 	  config.database.user,

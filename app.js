@@ -12,9 +12,8 @@ const port = process.env.PORT || 3000;
 /**
  * Store database credentials in a separate config.js file
  * Load the file/module and its values
- * change to require('./config_default')
  */
-const config = require('./config');
+// const config = require('./config_default');
 const dbOptions = {
         host: config.database.host,
         user: config.database.user,
