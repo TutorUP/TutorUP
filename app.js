@@ -9,6 +9,7 @@ const methodOverride = require('method-override');
 
 const port = process.env.PORT || 3000;
 
+
 /**
  * Store database credentials in a separate config.js file
  * Load the file/module and its values
@@ -35,6 +36,8 @@ app.set('view engine', 'ejs');
 /************************************
             MIDDLEWARE
 *************************************/
+app.use(express.static(__dirname + 'public')); //Serves resources from public folder
+app.use(express.static(dir));
 /**
 * Express Validator Middleware for Form Validation
 */
