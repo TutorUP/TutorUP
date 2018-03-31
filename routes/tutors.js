@@ -59,7 +59,7 @@ app.post('/add', (req, res, next) => {
     req.assert('subject', 'Subject is required').notEmpty()
     req.assert('email', 'A valid email is required').isEmail()
 
-    const errors = req.validationErrors()
+    var errors = req.validationErrors()
     if(!errors) {
         const tutor = {
             name: req.sanitize('name').escape().trim(),
@@ -124,7 +124,6 @@ app.get('/edit/(:id)', (req, res, next) => {
             email: rows[0].email
         })
     }
-
     })
 })
 
