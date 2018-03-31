@@ -89,7 +89,7 @@ app.post('/add', (req, res, next) => {
         })
     }
     else {
-        const error_msg = ''
+        let error_msg = ''
         errors.forEach((error) => {
             error_msg += error.msg + '<br>'
         })
