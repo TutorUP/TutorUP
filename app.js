@@ -88,9 +88,11 @@ app.use(flash());
 *************************************/
 const index = require('./routes/index');
 const tutors = require('./routes/tutors');
+const api = require('./routes/api');
 
 app.use('/', index);
 app.use('/tutors', tutors);
+app.use('/api/v1/tutors', api);
 
 
 app.listen(port, () => {
