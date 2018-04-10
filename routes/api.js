@@ -30,5 +30,13 @@ app.get('/', (req, res, next) => {
     });
 })
 
+app.post('/', (req, res) => {
+    var params = req.body;
+    connection.query('INSERT INTO tutors SET ?', params, (error, results, fields) => {
+        if (error) { res.send(JSON.stringify({"status": 500, "error": error, "response": null })); }
+        res.send(JSON.stringify({"status": 200, "error":null, "response": results }))
+    })
+})
+
 
 module.exports = app;
