@@ -20,12 +20,12 @@ const connection = mysql.createConnection(process.env.JAWSDB_URL);
 connection.connect();
 
 app.get('/', (req, res, next) => {
-    connection.query('SELECT * FROM tutors ORDER BY id DESC', (err, rows, fields) => {
+    connection.query('SELECT * FROM tutors ORDER BY id DESC', (err, results, fields) => {
         if (err) {
             res.send(JSON.stringify({"status": 500, "error": error, "response": null }));
         }
         else {
-            res.send(JSON.stringify({ "status": 200, "error": null, "response": results }));    
+            res.send(JSON.stringify({ "status": 200, "error": null, "response": results }));
         }
     });
 })
