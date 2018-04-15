@@ -2,11 +2,25 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 
+//Enable all CORS Requests
+const cors = require('cors');
+app.use(cors());
+
 const connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 connection.connect();
 
-// REST API Operations
+
+app.route('/api/tutors/:name').get((req, res) => {
+    const requestedTutorName = req.params['name'];
+    res.send({ name: requestedTutorName });
+});
+
+app.route('/api/tutors/:name').put((req, res) => {
+    res.send(200, req.body);
+});
+
+// REST API Operation
 app.get('/', (req, res, next) => {
     connection.query('SELECT * FROM tutors ORDER BY id DESC', (error, results, fields) => {
         if (error) {

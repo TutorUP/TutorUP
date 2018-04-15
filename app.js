@@ -13,6 +13,10 @@ const port = process.env.PORT || 3000;
 //Static folder to access public resources (img, style)
 app.use(express.static(path.join(__dirname, 'public')));
 
+//Enable all CORS Requests
+const cors = require('cors');
+app.use(cors());
+
 
 /**
  * Store database credentials in a separate config.js file
